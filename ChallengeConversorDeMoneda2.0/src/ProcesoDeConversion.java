@@ -15,5 +15,12 @@ public class ProcesoDeConversion {
         cantidadAConvertir = cantidad * monedas.conversion_rate();
         System.out.println(cantidad+" "+monedaLocal+" = "+cantidadAConvertir+" "+monedas.target_code());
     }
-
+    //vamos a hacer otra sección aca para que el conversor se adapte a las necesidades del usuario
+    public static void convertirAOtrasMonedas(ConsultarValorAPI consultar, Scanner lectura){
+        System.out.println("Ingrse la nomenclatura de la moneda actual y/o base: ");
+        String monedaLocal = lectura.nextLine().toUpperCase();
+        System.out.println("Ingrese la nomenclatura de la moneda que desea hacer la conversion: ");
+        String monedaObjetivo = lectura.nextLine().toUpperCase();
+        convertir(monedaLocal, monedaObjetivo, consultar, lectura);
+    }
 }

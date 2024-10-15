@@ -8,14 +8,15 @@ public class Principal {
         ConsultarValorAPI consulta = new ConsultarValorAPI();
 
         int opcion = 0;
-        while (opcion != 5){
+        while (opcion != 6){
             System.out.println("""
                     *******************************************\n
                     1. Dollar americano a Peso Colombiano
                     2. Peso Colombiano a Dollar Americano
                     3. Dollar Americano a Real Brasileño
                     4. Real Brasileño a Dollar Americano
-                    5. Salir
+                    5. Convertir a otras monedas
+                    6. Salir
                     \n******************************************
                     """);
             opcion = lectura.nextInt();
@@ -35,10 +36,13 @@ public class Principal {
                     ProcesoDeConversion.convertir("BRL","USD", consulta, lectura);
                     break;
                 case 5:
-                    System.out.println("OK, GUMP, Sliendo......");
+                    ProcesoDeConversion.convertirAOtrasMonedas(consulta,lectura);
+                case 6:
+                    System.out.println("OK, Sliendo......");
+                    break;
 
                 default:
-                    System.out.println("esa  mierda no existe en este programa");
+                    System.out.println("Opción ingresada no valida");
                     break;
 
             }
